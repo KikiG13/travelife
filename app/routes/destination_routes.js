@@ -31,6 +31,7 @@ const router = express.Router()
 // GET /destinations
 router.get('/destinations', requireToken, (req, res, next) => {
   Destination.find()
+    .populate('owner')
     // respond with status 200 and JSON of the destinations
     .then(destinations => res.status(200).json({ destinations: destinations }))
     // if an error occurs, pass it to the handler

@@ -10,8 +10,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  token: String
-}, {
+  token: String,
+  destinations: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Destination'
+    }
+  ]
+},
+{
   timestamps: true,
   toJSON: {
     // remove `hashedPassword` field when we call `.toJSON`

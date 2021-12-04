@@ -39,4 +39,4 @@ const destinationSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Example', destinationSchema)
+module.exports = mongoose.model('Destination', destinationSchema)
